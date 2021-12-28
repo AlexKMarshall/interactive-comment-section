@@ -3,7 +3,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { Avatar } from '.'
 
 const meta: ComponentMeta<typeof Avatar> = {
-  title: 'Avatar',
+  title: 'Components/Avatar',
   component: Avatar,
 }
 
