@@ -13,5 +13,10 @@ const Template: ComponentStory<typeof Avatar> = (args) => <Avatar {...args} />
 
 export const Default = Template.bind({})
 Default.args = {
-  username: 'armyrob',
+  username: 'belinda',
+}
+
+export const NoImage = Template.bind({})
+NoImage.args = {
+  username: 'klausbloch',
 }
