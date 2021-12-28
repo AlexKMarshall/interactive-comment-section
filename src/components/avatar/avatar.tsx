@@ -14,7 +14,7 @@ export function Avatar({ username }: Props): JSX.Element {
     })
   }, [username])
 
-  const initial = username.charAt(0).toUpperCase()
+  const initial = username.charAt(0)
   return (
     <span
       style={assignInlineVars({ [styles.backgroundColor]: backgroundColor })}
