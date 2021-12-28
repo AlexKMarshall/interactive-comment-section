@@ -1,17 +1,17 @@
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { ComponentMeta, ComponentStory } from '@storybook/react'
 
-import { Avatar } from ".";
+import { Avatar } from '.'
 
 const meta: ComponentMeta<typeof Avatar> = {
-  title: "Avatar",
+  title: 'Avatar',
   component: Avatar,
-};
+}
 
-export default meta;
+export default meta
 
-const Template: ComponentStory<typeof Avatar> = (args) => <Avatar {...args} />;
+const Template: ComponentStory<typeof Avatar> = (args) => <Avatar {...args} />
 
-export const Default = Template.bind({});
+export const Default = Template.bind({})
 Default.args = {
-  username: "armyrob",
-};
+  username: 'armyrob',
+}

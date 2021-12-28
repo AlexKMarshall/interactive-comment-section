@@ -1,12 +1,12 @@
-const { VanillaExtractPlugin } = require("@vanilla-extract/webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const { VanillaExtractPlugin } = require('@vanilla-extract/webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
   webpackFinal(baseConfig, options) {
-    const { module = {}, plugins = {} } = baseConfig;
+    const { module = {}, plugins = {} } = baseConfig
 
-    const cssRule = module.rules.find((rule) => rule?.test?.test("test.css"));
-    cssRule.test = /.*(?<!\.vanilla)\.css$/;
+    const cssRule = module.rules.find((rule) => rule?.test?.test('test.css'))
+    cssRule.test = /.*(?<!\.vanilla)\.css$/
 
     return {
       ...baseConfig,
@@ -24,7 +24,7 @@ module.exports = {
             use: [
               MiniCssExtractPlugin.loader,
               {
-                loader: require.resolve("css-loader"),
+                loader: require.resolve('css-loader'),
                 options: {
                   url: false,
                 },
@@ -33,6 +33,6 @@ module.exports = {
           },
         ],
       },
-    };
+    }
   },
-};
+}
