@@ -1,4 +1,8 @@
+const { createVanillaExtractPlugin } = require("@vanilla-extract/next-plugin");
+
 /** @type {import('next').NextConfig} */
-module.exports = {
+const nextConfig = {
   reactStrictMode: true,
-}
+};
+
+module.exports = createVanillaExtractPlugin(nextConfig);
