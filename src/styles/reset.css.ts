@@ -27,6 +27,7 @@ globalStyle('body', {
   minHeight: '100%',
   textRendering: 'optimizeSpeed',
   lineHeight: 1.5,
+  fontFamily: `'Rubik', sans-serif`,
 })
 
 globalStyle('a:not([class])', {
