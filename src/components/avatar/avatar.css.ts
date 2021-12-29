@@ -1,8 +1,8 @@
 import { createVar, style } from '@vanilla-extract/css'
 
-import { fontSizeTokens } from 'src/styles/theme.font.css'
-import { radiusTokens } from 'src/styles/theme.radius.css'
-import { sizeTokens } from 'src/styles/theme.size.css'
+import { fontSizeTokens } from 'src/styles/font.css'
+import { radiusTokens } from 'src/styles/radius.css'
+import { sizeTokens } from 'src/styles/size.css'
 
 export const backgroundColor = createVar()
 
