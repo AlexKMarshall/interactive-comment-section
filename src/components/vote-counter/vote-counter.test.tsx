@@ -1,8 +1,13 @@
+import * as stories from './vote-counter.stories'
+
 import { render, screen } from '@testing-library/react'
 
-import { VoteCounter } from '.'
+import { axe } from 'jest-axe'
+import { composeStories } from '@storybook/testing-react'
 import { useState } from 'react'
 import userEvent from '@testing-library/user-event'
+
+const { Default: DefaultVoteCounter } = composeStories(stories)
 
 type ControlledWrapperProps = {
   defaultValue?: number
@@ -11,9 +16,20 @@ function ControlledWrapper({ defaultValue = 0 }: ControlledWrapperProps) {
   const [value, setValue] = useState(defaultValue)
   const handleVote = (newVote: number) => setValue(newVote)
   return (
-    <VoteCounter value={value} onUpVote={handleVote} onDownVote={handleVote} />
+    <DefaultVoteCounter
+      value={value}
+      onUpVote={handleVote}
+      onDownVote={handleVote}
+    />
   )
 }
+
+it('should have no accessibility violations', async () => {
+  const { container } = render(<DefaultVoteCounter />)
+
+  const results = await axe(container)
+  expect(results).toHaveNoViolations()
+})
 
 it('should work as a controlled component', () => {
   render(<ControlledWrapper defaultValue={0} />)
