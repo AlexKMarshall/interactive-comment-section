@@ -1,13 +1,30 @@
 export function Plus(): JSX.Element {
   return (
     <svg
-      viewBox="0 0 14 14"
-      width="14"
-      height="14"
       xmlns="http://www.w3.org/2000/svg"
+      width="20"
+      height="20"
+      viewBox="0 0 20 20"
       fill="currentColor"
     >
-      <path d="M7.83 12.396c.137 0 .255-.05.354-.149.1-.1.149-.217.149-.354V8.504h3.315c.136 0 .254-.05.354-.149.099-.1.148-.217.148-.354V6.772a.483.483 0 0 0-.148-.354.483.483 0 0 0-.354-.149H8.333V2.9a.483.483 0 0 0-.149-.354.483.483 0 0 0-.354-.149H6.415a.483.483 0 0 0-.354.149c-.1.1-.149.217-.149.354v3.37H2.58a.483.483 0 0 0-.354.15c-.1.099-.149.217-.149.353v1.23c0 .136.05.254.149.353.1.1.217.149.354.149h3.333v3.39c0 .136.05.254.15.353.098.1.216.149.353.149H7.83Z" />
+      <path
+        fillRule="evenodd"
+        d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z"
+        clipRule="evenodd"
+      />
     </svg>
   )
 }
+
+;<svg
+  xmlns="http://www.w3.org/2000/svg"
+  className="h-5 w-5"
+  viewBox="0 0 20 20"
+  fill="currentColor"
+>
+  <path
+    fillRule="evenodd"
+    d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z"
+    clipRule="evenodd"
+  />
+</svg>

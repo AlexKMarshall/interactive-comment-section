@@ -1,13 +1,17 @@
 export function Minus(): JSX.Element {
   return (
     <svg
-      viewBox="0 0 14 14"
-      width="14"
-      height="14"
       xmlns="http://www.w3.org/2000/svg"
+      width="20"
+      height="20"
+      viewBox="0 0 20 20"
       fill="currentColor"
     >
-      <path d="M10.756 8.16c.204 0 .38-.056.53-.167.148-.11.222-.243.222-.396V6.222c0-.152-.074-.284-.223-.395a.859.859 0 0 0-.53-.167H2.26a.859.859 0 0 0-.53.167C1.583 5.937 1.509 6.07 1.509 6.222v1.375c0 .153.074.285.223.396a.859.859 0 0 0 .53.167h8.495Z" />
+      <path
+        fillRule="evenodd"
+        d="M5 10a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1z"
+        clipRule="evenodd"
+      />
     </svg>
   )
 }
