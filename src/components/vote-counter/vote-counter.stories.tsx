@@ -5,6 +5,11 @@ import { VoteCounter } from '.'
 const meta: ComponentMeta<typeof VoteCounter> = {
   title: 'Components/VoteCounter',
   component: VoteCounter,
+  parameters: {
+    actions: {
+      argTypesRegex: '^on.*',
+    },
+  },
 }
 
 export default meta
