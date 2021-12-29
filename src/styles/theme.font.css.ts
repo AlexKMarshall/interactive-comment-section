@@ -10,3 +10,18 @@ export const fontSizeTokens = createGlobalTheme(':root', {
   7: '3rem',
   8: '3.5rem',
 })
+
+export const fontWeightTokens = createGlobalTheme(':root', {
+  regular: '400',
+  semiBold: '500',
+  bold: '700',
+})
+
+export const lineHeightTokens = createGlobalTheme(':root', {
+  '00': '0.95',
+  0: '1.1',
+  1: '1.25',
+  2: '1.375',
+  3: '1.5',
+  4: '1.75',
+})

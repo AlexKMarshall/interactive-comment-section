@@ -1,4 +1,5 @@
 import { globalStyle } from '@vanilla-extract/css'
+import { lineHeightTokens } from './theme.font.css'
 
 const motionOk = `prefers-reduced-motion: no-preference`
 const motionNotOk = `prefers-reduced-motion: reduce`
@@ -26,7 +27,7 @@ globalStyle('html', {
 globalStyle('body', {
   minHeight: '100%',
   textRendering: 'optimizeSpeed',
-  lineHeight: 1.5,
+  lineHeight: lineHeightTokens[3],
   fontFamily: `'Rubik', sans-serif`,
 })
 
