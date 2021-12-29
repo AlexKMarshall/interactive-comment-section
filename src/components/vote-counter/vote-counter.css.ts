@@ -1,9 +1,9 @@
-import { fontWeightTokens, lineHeightTokens } from 'src/styles/theme.font.css'
-import { globalStyle, style } from '@vanilla-extract/css'
+import { fontWeightTokens, lineHeightTokens } from 'src/styles/font.css'
 
-import { colorThemeTokens } from 'src/styles/theme.color.css'
-import { radiusTokens } from 'src/styles/theme.radius.css'
-import { sizeTokens } from 'src/styles/theme.size.css'
+import { colorThemeTokens } from 'src/styles/color.css'
+import { radiusTokens } from 'src/styles/radius.css'
+import { sizeTokens } from 'src/styles/size.css'
+import { style } from '@vanilla-extract/css'
 
 export const wrapper = style({
   display: 'inline-flex',
@@ -15,11 +15,8 @@ export const wrapper = style({
   fontWeight: fontWeightTokens.bold,
 })
 
-globalStyle(`${wrapper} > *`, {
-  padding: sizeTokens[3],
-})
-
 export const button = style({
+  padding: sizeTokens[3],
   backgroundColor: 'transparent',
   color: colorThemeTokens.text.accentLowContrast,
   border: 'none',

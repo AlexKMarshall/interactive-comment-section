@@ -1,5 +1,5 @@
 import { globalStyle } from '@vanilla-extract/css'
-import { lineHeightTokens } from './theme.font.css'
+import { lineHeightTokens } from './font.css'
 
 const motionOk = `prefers-reduced-motion: no-preference`
 const motionNotOk = `prefers-reduced-motion: reduce`
