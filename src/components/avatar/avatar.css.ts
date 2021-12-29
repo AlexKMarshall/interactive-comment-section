@@ -7,7 +7,7 @@ import { sizeTokens } from 'src/styles/theme.size.css'
 export const backgroundColor = createVar()
 
 export const avatar = style({
-  width: sizeTokens[8],
+  width: sizeTokens[9],
   aspectRatio: '1',
   backgroundColor,
   display: 'grid',
