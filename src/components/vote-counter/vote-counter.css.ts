@@ -15,11 +15,8 @@ export const wrapper = style({
   fontWeight: fontWeightTokens.bold,
 })
 
-globalStyle(`${wrapper} > *`, {
-  padding: sizeTokens[3],
-})
-
 export const button = style({
+  padding: sizeTokens[3],
   backgroundColor: 'transparent',
   color: colorThemeTokens.text.accentLowContrast,
   border: 'none',
