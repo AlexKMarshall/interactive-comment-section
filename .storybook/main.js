@@ -7,6 +7,7 @@ module.exports = {
     path.resolve('./.storybook/ts-paths'),
     '@storybook/addon-links',
     '@storybook/addon-essentials',
+    '@storybook/addon-a11y',
   ],
   framework: '@storybook/react',
   core: {
