@@ -10,11 +10,6 @@ const meta: ComponentMeta<typeof VoteCounter> = {
       options: ['horizontal', 'vertical'],
     },
   },
-  parameters: {
-    actions: {
-      argTypesRegex: '^on.*',
-    },
-  },
 }
 
 export default meta

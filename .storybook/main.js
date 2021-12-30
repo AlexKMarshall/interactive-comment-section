@@ -13,4 +13,5 @@ module.exports = {
   core: {
     builder: 'webpack5',
   },
+  staticDirs: ['../storybook-static'],
 }

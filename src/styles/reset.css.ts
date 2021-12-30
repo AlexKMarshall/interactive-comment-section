@@ -40,6 +40,14 @@ globalStyle('input, button, textarea, select', {
   lineHeight: 'inherit',
 })
 
+globalStyle(
+  `a[href], area, button, input, label[for], select, summary, textarea, [tabindex]:not([tabindex*="-"])`,
+  {
+    cursor: 'pointer',
+    touchAction: 'manipulation',
+  }
+)
+
 globalStyle('img, svg', {
   display: 'block',
 })
