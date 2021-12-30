@@ -1,7 +1,7 @@
 import { AllHTMLAttributes } from 'react'
 
 type Props = Pick<AllHTMLAttributes<SVGElement>, 'className'>
-export function Minus(props: Props): JSX.Element {
+export function Reply(props: Props): JSX.Element {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -11,7 +11,7 @@ export function Minus(props: Props): JSX.Element {
     >
       <path
         fillRule="evenodd"
-        d="M5 10a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1z"
+        d="M7.707 3.293a1 1 0 010 1.414L5.414 7H11a7 7 0 017 7v2a1 1 0 11-2 0v-2a5 5 0 00-5-5H5.414l2.293 2.293a1 1 0 11-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
         clipRule="evenodd"
       />
     </svg>

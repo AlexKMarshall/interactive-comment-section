@@ -1,6 +1,7 @@
 import * as iconSvgs from './icons'
+import * as styles from './icon.css'
 
-type Icon = keyof typeof iconSvgs
+export type Icon = keyof typeof iconSvgs
 export const iconKeys = Object.keys(iconSvgs) as Icon[]
 
 type Props = {
@@ -8,5 +9,5 @@ type Props = {
 }
 export function Icon({ icon }: Props): JSX.Element {
   const IconComponent = iconSvgs[icon]
-  return <IconComponent />
+  return <IconComponent className={styles.icon} />
 }
