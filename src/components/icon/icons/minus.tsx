@@ -1,11 +1,13 @@
-export function Minus(): JSX.Element {
+import { AllHTMLAttributes } from 'react'
+
+type Props = Pick<AllHTMLAttributes<SVGElement>, 'className'>
+export function Minus(props: Props): JSX.Element {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="20"
-      height="20"
       viewBox="0 0 20 20"
       fill="currentColor"
+      {...props}
     >
       <path
         fillRule="evenodd"
