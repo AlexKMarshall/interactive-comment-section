@@ -1,7 +1,13 @@
+import { assignVars, createThemeContract, style } from '@vanilla-extract/css'
+
 import { colorThemeTokens } from 'src/styles/color.css'
 import { fontWeightTokens } from 'src/styles/font.css'
 import { recipe } from '@vanilla-extract/recipes'
-import { style } from '@vanilla-extract/css'
+
+const buttonTokens = createThemeContract({
+  textColor: null,
+  textHoverColor: null,
+})
 
 export const buttonBase = style({
   display: 'inline-flex',
@@ -9,8 +15,13 @@ export const buttonBase = style({
   gap: '0.25em',
   background: 'none',
   border: 'none',
-  color: colorThemeTokens.button.primary,
   fontWeight: fontWeightTokens.semiBold,
+  color: buttonTokens.textColor,
+  selectors: {
+    '&:hover, &:focus-visible': {
+      color: buttonTokens.textHoverColor,
+    },
+  },
 })
 
 export const button = recipe({
@@ -19,10 +30,16 @@ export const button = recipe({
   variants: {
     color: {
       info: {
-        color: colorThemeTokens.tone.info.base,
+        vars: assignVars(buttonTokens, {
+          textColor: colorThemeTokens.tone.info.base,
+          textHoverColor: colorThemeTokens.tone.info.variant,
+        }),
       },
       critical: {
-        color: colorThemeTokens.tone.critical.base,
+        vars: assignVars(buttonTokens, {
+          textColor: colorThemeTokens.tone.critical.base,
+          textHoverColor: colorThemeTokens.tone.critical.variant,
+        }),
       },
     },
   },

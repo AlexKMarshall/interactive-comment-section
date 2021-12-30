@@ -34,3 +34,13 @@ Critical.args = {
   icon: 'Delete',
   label: 'Delete',
 }
+
+export const Hover = Template.bind({})
+Hover.args = {
+  ...Default.args,
+}
+Hover.parameters = {
+  pseudo: {
+    hover: true,
+  },
+}
