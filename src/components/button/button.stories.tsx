@@ -24,6 +24,7 @@ export const WithIcon = Template.bind({})
 WithIcon.args = {
   ...Default.args,
   icon: 'Reply',
+  label: 'Reply',
 }
 
 export const Critical = Template.bind({})
