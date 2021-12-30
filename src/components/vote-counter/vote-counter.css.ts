@@ -8,7 +8,7 @@ import { style } from '@vanilla-extract/css'
 export const wrapper = style({
   display: 'inline-flex',
   alignItems: 'center',
-  backgroundColor: colorThemeTokens.buttonBg,
+  backgroundColor: colorThemeTokens.voteButtonBg,
   color: colorThemeTokens.text.accent,
   borderRadius: radiusTokens[3],
   lineHeight: lineHeightTokens['00'],

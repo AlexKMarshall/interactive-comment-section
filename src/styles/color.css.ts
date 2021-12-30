@@ -13,7 +13,10 @@ export const colorTokens = createGlobalTheme(':root', {
 
 export const colorThemeTokens = createGlobalThemeContract({
   body: 'body',
-  buttonBg: 'buttonBg',
+  voteButtonBg: 'buttonBg',
+  button: {
+    primary: 'buttonPrimary',
+  },
   text: {
     accentLowContrast: 'textAccentLowContrast',
     accent: 'textAccent',
@@ -22,7 +25,10 @@ export const colorThemeTokens = createGlobalThemeContract({
 
 createGlobalTheme(':root', colorThemeTokens, {
   body: colorTokens.veryLightGray,
-  buttonBg: colorTokens.veryLightGray,
+  voteButtonBg: colorTokens.veryLightGray,
+  button: {
+    primary: colorTokens.moderateBlue,
+  },
   text: {
     accentLowContrast: colorTokens.lightGrayishBlue,
     accent: colorTokens.moderateBlue,
