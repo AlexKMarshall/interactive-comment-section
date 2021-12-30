@@ -1,8 +1,6 @@
 import * as iconSvgs from './icons'
 import * as styles from './icon.css'
 
-import { style } from '@vanilla-extract/css'
-
 export type Icon = keyof typeof iconSvgs
 export const iconKeys = Object.keys(iconSvgs) as Icon[]
 

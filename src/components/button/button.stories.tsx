@@ -17,11 +17,19 @@ const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />
 
 export const Default = Template.bind({})
 Default.args = {
-  children: 'Reply',
+  label: 'Press Me',
 }
 
 export const WithIcon = Template.bind({})
 WithIcon.args = {
   ...Default.args,
   icon: 'Reply',
+}
+
+export const Critical = Template.bind({})
+Critical.args = {
+  ...Default.args,
+  color: 'critical',
+  icon: 'Delete',
+  label: 'Delete',
 }

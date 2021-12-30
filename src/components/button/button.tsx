@@ -1,18 +1,23 @@
 import * as styles from './button.css'
 
 import { Icon } from '..'
-import { ReactNode } from 'react'
 
 type Props = {
-  children: ReactNode
+  label: string
   onClick: () => void
   icon?: Icon
+  color?: 'info' | 'critical'
 }
-export function Button({ children, onClick, icon }: Props): JSX.Element {
+export function Button({
+  label,
+  onClick,
+  icon,
+  color = 'info',
+}: Props): JSX.Element {
   return (
-    <button onClick={onClick} className={styles.button}>
+    <button onClick={onClick} className={styles.button({ color })}>
       {icon ? <Icon icon={icon} /> : null}
-      {children}
+      {label}
     </button>
   )
 }
