@@ -14,7 +14,7 @@ export function Username({
 }: Props): JSX.Element {
   return (
     <div className={styles.usernameWrapper}>
-      <Avatar username={username} src={avatarSrc} />
+      <Avatar username={username} src={avatarSrc} size="sm" />
       <span className={styles.username}>{username}</span>
       {isCurrentUser ? <Badge size={0}>you</Badge> : null}
     </div>
