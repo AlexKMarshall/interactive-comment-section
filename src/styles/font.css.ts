@@ -1,6 +1,8 @@
 import { createGlobalTheme } from '@vanilla-extract/css'
 
 export const fontSizeTokens = createGlobalTheme(':root', {
+  '00': '0.5rem',
+  0: '0.75rem',
   1: '1rem',
   2: '1.1rem',
   3: '1.25rem',
@@ -24,4 +26,8 @@ export const lineHeightTokens = createGlobalTheme(':root', {
   2: '1.375',
   3: '1.5',
   4: '1.75',
+})
+
+export const letterSpacingTokens = createGlobalTheme(':root', {
+  1: '0.025em',
 })

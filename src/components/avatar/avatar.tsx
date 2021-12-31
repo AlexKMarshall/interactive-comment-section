@@ -3,15 +3,15 @@ import * as styles from './avatar.css'
 import NextImage from 'next/image'
 import { assignInlineVars } from '@vanilla-extract/dynamic'
 
-type Props = { username: string; src?: string }
-export function Avatar({ src, username }: Props): JSX.Element {
+type Props = { username: string; src?: string; size?: 'sm' | 'md' }
+export function Avatar({ src, username, size = 'md' }: Props): JSX.Element {
   const initial = username.charAt(0).toUpperCase()
   const backgroundColor = getColor(username)
 
   return (
     <span
       style={assignInlineVars({ [styles.backgroundColor]: backgroundColor })}
-      className={styles.avatar}
+      className={styles.avatar({ size })}
     >
       <span aria-hidden>{initial}</span>
       {src ? <NextImage src={src} alt="" layout="fill" /> : null}
