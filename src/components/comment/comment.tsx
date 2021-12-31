@@ -44,7 +44,8 @@ export function Comment({
       </div>
       <div className={styles.content}>
         <p>
-          {replyTo ? <span>{replyTo} </span> : null} {content}
+          {replyTo ? <span className={styles.replyTo}>{replyTo} </span> : null}{' '}
+          {content}
         </p>
       </div>
       <div className={styles.votes}>

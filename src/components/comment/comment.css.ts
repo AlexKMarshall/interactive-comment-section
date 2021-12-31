@@ -1,5 +1,7 @@
 import { media, resolveMQ } from 'src/styles/media'
 
+import { colorThemeTokens } from 'src/styles/color.css'
+import { fontWeightTokens } from 'src/styles/font.css'
 import { sizeTokens } from 'src/styles/size.css'
 import { style } from '@vanilla-extract/css'
 
@@ -38,4 +40,13 @@ export const actions = style({
 
 export const votes = style({
   gridArea: 'votes',
+})
+
+export const replyTo = style({
+  color: colorThemeTokens.text.accent,
+  fontWeight: fontWeightTokens.semiBold,
+
+  ':before': {
+    content: '@',
+  },
 })
