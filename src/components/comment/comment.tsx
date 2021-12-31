@@ -1,11 +1,6 @@
-import {
-  Box,
-  Button,
-  Cluster,
-  Stack,
-  Username,
-  VoteCounter,
-} from 'src/components'
+import * as styles from './comment.css'
+
+import { Box, Button, Cluster, Username, VoteCounter } from 'src/components'
 
 import { formatDistance } from 'date-fns'
 
@@ -31,8 +26,13 @@ export function Comment({
   const commentTimePeriod = formatDistance(createdOn, Date.now())
 
   return (
-    <Box component="article" backgroundColor={2} borderRadius={3}>
-      <Stack>
+    <Box
+      component="article"
+      backgroundColor={2}
+      borderRadius={3}
+      className={styles.comment}
+    >
+      <div className={styles.meta}>
         <Cluster>
           <Username
             username={user.username}
@@ -41,28 +41,32 @@ export function Comment({
           />
           <span>{commentTimePeriod} ago</span>
         </Cluster>
+      </div>
+      <div className={styles.content}>
         <p>
           {replyTo ? <span>{replyTo} </span> : null} {content}
         </p>
-        <Cluster justify="space-between">
-          <VoteCounter value={votes} />
-          <Cluster>
-            {isCurrentUser ? (
-              <>
-                <Button
-                  icon="Delete"
-                  label="Delete"
-                  color="critical"
-                  onClick={() => {}}
-                />
-                <Button icon="Edit" label="Edit" onClick={() => {}} />
-              </>
-            ) : (
-              <Button icon="Reply" label="Reply" onClick={() => {}} />
-            )}
-          </Cluster>
+      </div>
+      <div className={styles.votes}>
+        <VoteCounter value={votes} />
+      </div>
+      <div className={styles.actions}>
+        <Cluster>
+          {isCurrentUser ? (
+            <>
+              <Button
+                icon="Delete"
+                label="Delete"
+                color="critical"
+                onClick={() => {}}
+              />
+              <Button icon="Edit" label="Edit" onClick={() => {}} />
+            </>
+          ) : (
+            <Button icon="Reply" label="Reply" onClick={() => {}} />
+          )}
         </Cluster>
-      </Stack>
+      </div>
     </Box>
   )
 }
