@@ -28,3 +28,5 @@ expect.extend(toHaveNoViolations)
 
 Can also add the `@storybook/addon-a11y` plugin. This gives a little tab in the storybook control panel that
 shows any accessibility violations like low contrast etc. It's easy to then tab through them. Not sure if any violations get picked up in chromatic or not
+
+use the addon `storybook-addon-pseudo-states` to make stories that display hover/focus etc. Can use this to generate the snapshots in chromatic

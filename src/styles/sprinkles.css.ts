@@ -5,6 +5,7 @@ import {
   defineProperties,
 } from '@vanilla-extract/sprinkles'
 
+import { fontSizeTokens } from './font.css'
 import { resolveMQ } from './media'
 
 const responsiveProperties = defineProperties({
@@ -15,6 +16,7 @@ const responsiveProperties = defineProperties({
   defaultCondition: 'all',
   properties: {
     flexDirection: ['row', 'column'],
+    fontSize: fontSizeTokens,
   },
 })
 
