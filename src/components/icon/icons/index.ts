@@ -1,4 +1,5 @@
 export * from './delete'
+export * from './edit'
 export * from './minus'
 export * from './plus'
 export * from './reply'
