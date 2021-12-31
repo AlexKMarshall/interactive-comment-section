@@ -37,3 +37,13 @@ CurrentUser.args = {
   ...Default.args,
   isCurrentUser: true,
 }
+
+export const MobileViewport = Template.bind({})
+MobileViewport.args = {
+  ...Default.args,
+}
+MobileViewport.parameters = {
+  viewport: {
+    defaultViewport: 'mobile1',
+  },
+}

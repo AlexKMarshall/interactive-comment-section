@@ -20,7 +20,7 @@ const responsiveProperties = defineProperties({
   properties: {
     display: ['flex'],
     flexDirection: ['row', 'column'],
-    justifyContent: ['flex-start', 'space-between'],
+    justifyContent: ['flex-start', 'space-between', 'flex-end'],
     alignItems: ['center'],
     padding: sizeTokens,
     gap: sizeTokens,

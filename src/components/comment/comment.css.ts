@@ -1,3 +1,5 @@
+import { media, resolveMQ } from 'src/styles/media'
+
 import { sizeTokens } from 'src/styles/size.css'
 import { style } from '@vanilla-extract/css'
 
@@ -9,6 +11,16 @@ export const comment = style({
                       'content content'
                       'votes actions'`,
   gap: sizeTokens[4],
+  alignContent: 'baseline',
+
+  '@media': {
+    [resolveMQ['md-n-above']['@media']]: {
+      gridTemplateColumns: 'auto 1fr auto',
+      gridTemplateRows: 'auto 1fr',
+      gridTemplateAreas: `'votes meta actions'
+                          'votes content content'`,
+    },
+  },
 })
 
 export const meta = style({

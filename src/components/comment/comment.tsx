@@ -48,10 +48,13 @@ export function Comment({
         </p>
       </div>
       <div className={styles.votes}>
-        <VoteCounter value={votes} />
+        <VoteCounter
+          value={votes}
+          orientation={{ all: 'horizontal', 'md-n-above': 'vertical' }}
+        />
       </div>
       <div className={styles.actions}>
-        <Cluster>
+        <Cluster justify="flex-end">
           {isCurrentUser ? (
             <>
               <Button
