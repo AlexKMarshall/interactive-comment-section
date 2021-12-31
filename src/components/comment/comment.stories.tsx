@@ -31,3 +31,9 @@ export const defaultArgs: ComponentProps<typeof Comment> = {
 }
 export const Default = Template.bind({})
 Default.args = defaultArgs
+
+export const CurrentUser = Template.bind({})
+CurrentUser.args = {
+  ...Default.args,
+  isCurrentUser: true,
+}
