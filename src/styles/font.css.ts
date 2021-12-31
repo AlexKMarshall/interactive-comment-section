@@ -27,3 +27,7 @@ export const lineHeightTokens = createGlobalTheme(':root', {
   3: '1.5',
   4: '1.75',
 })
+
+export const letterSpacingTokens = createGlobalTheme(':root', {
+  1: '0.025em',
+})
