@@ -3,7 +3,7 @@ import * as avatarStories from 'src/components/avatar/avatar.stories'
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 
 import { ComponentProps } from 'react'
-import { Username } from '.'
+import { Username } from 'src/components'
 
 const avatarArgTypes = avatarStories.default.argTypes
 

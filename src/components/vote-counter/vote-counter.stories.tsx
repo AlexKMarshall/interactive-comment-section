@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 
-import { VoteCounter } from '.'
+import { VoteCounter } from 'src/components'
 
 const meta: ComponentMeta<typeof VoteCounter> = {
   title: 'Components/VoteCounter',

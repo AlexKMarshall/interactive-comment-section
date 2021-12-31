@@ -1,5 +1,11 @@
-import { Box, Cluster, Stack } from '../layout'
-import { Button, Username, VoteCounter } from '..'
+import {
+  Box,
+  Button,
+  Cluster,
+  Stack,
+  Username,
+  VoteCounter,
+} from 'src/components'
 
 import { formatDistance } from 'date-fns'
 

@@ -2,7 +2,7 @@ import * as usernameStories from 'src/components/username/username.stories'
 
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 
-import { Comment } from '.'
+import { Comment } from 'src/components'
 import { ComponentProps } from 'react'
 import { colorTokens } from 'src/styles/color.css'
 
