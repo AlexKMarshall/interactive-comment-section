@@ -2,6 +2,9 @@ import * as styles from './username.css'
 
 import { Avatar, Badge } from 'src/components'
 
+import { Cluster } from '../layout'
+import { sprinkles } from 'src/styles/sprinkles.css'
+
 type Props = {
   username: string
   avatarSrc?: string
@@ -13,10 +16,14 @@ export function Username({
   isCurrentUser = false,
 }: Props): JSX.Element {
   return (
-    <div className={styles.usernameWrapper}>
+    <Cluster space={3}>
       <Avatar username={username} src={avatarSrc} size="sm" />
-      <span className={styles.username}>{username}</span>
-      {isCurrentUser ? <Badge size={0}>you</Badge> : null}
-    </div>
+      <div
+        className={sprinkles({ display: 'flex', gap: 2, alignItems: 'center' })}
+      >
+        <span className={styles.username}>{username}</span>
+        {isCurrentUser ? <Badge size={0}>you</Badge> : null}
+      </div>
+    </Cluster>
   )
 }

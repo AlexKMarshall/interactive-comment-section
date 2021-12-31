@@ -5,8 +5,11 @@ import {
   defineProperties,
 } from '@vanilla-extract/sprinkles'
 
+import { colorThemeTokens } from './color.css'
 import { fontSizeTokens } from './font.css'
+import { radiusTokens } from './radius.css'
 import { resolveMQ } from './media'
+import { sizeTokens } from './size.css'
 
 const responsiveProperties = defineProperties({
   conditions: {
@@ -15,8 +18,15 @@ const responsiveProperties = defineProperties({
   },
   defaultCondition: 'all',
   properties: {
+    display: ['flex'],
     flexDirection: ['row', 'column'],
+    justifyContent: ['flex-start', 'space-between'],
+    alignItems: ['center'],
+    padding: sizeTokens,
+    gap: sizeTokens,
     fontSize: fontSizeTokens,
+    borderRadius: radiusTokens,
+    backgroundColor: colorThemeTokens.surface,
   },
 })
 

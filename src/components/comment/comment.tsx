@@ -1,4 +1,7 @@
+import { Box, Cluster, Stack } from '../layout'
 import { Button, Username, VoteCounter } from '..'
+
+import { formatDistance } from 'date-fns'
 
 type Props = {
   user: {
@@ -19,33 +22,41 @@ export function Comment({
   replyTo,
   votes,
 }: Props): JSX.Element {
-  const commentTimePeriod = `${createdOn}`
+  const commentTimePeriod = formatDistance(createdOn, Date.now())
 
   return (
-    <article>
-      <Username
-        username={user.username}
-        avatarSrc={user.avatarSrc}
-        isCurrentUser={isCurrentUser}
-      />
-      <span>{commentTimePeriod}</span>
-      <p>
-        {replyTo ? <span>{replyTo} </span> : null} {content}
-      </p>
-      <VoteCounter value={votes} />
-      {isCurrentUser ? (
-        <>
-          <Button
-            icon="Delete"
-            label="Delete"
-            color="critical"
-            onClick={() => {}}
+    <Box component="article" backgroundColor={2} borderRadius={3}>
+      <Stack>
+        <Cluster>
+          <Username
+            username={user.username}
+            avatarSrc={user.avatarSrc}
+            isCurrentUser={isCurrentUser}
           />
-          <Button icon="Edit" label="Edit" onClick={() => {}} />
-        </>
-      ) : (
-        <Button icon="Reply" label="Reply" onClick={() => {}} />
-      )}
-    </article>
+          <span>{commentTimePeriod} ago</span>
+        </Cluster>
+        <p>
+          {replyTo ? <span>{replyTo} </span> : null} {content}
+        </p>
+        <Cluster justify="space-between">
+          <VoteCounter value={votes} />
+          <Cluster>
+            {isCurrentUser ? (
+              <>
+                <Button
+                  icon="Delete"
+                  label="Delete"
+                  color="critical"
+                  onClick={() => {}}
+                />
+                <Button icon="Edit" label="Edit" onClick={() => {}} />
+              </>
+            ) : (
+              <Button icon="Reply" label="Reply" onClick={() => {}} />
+            )}
+          </Cluster>
+        </Cluster>
+      </Stack>
+    </Box>
   )
 }
