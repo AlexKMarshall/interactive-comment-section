@@ -44,13 +44,3 @@ ReplyTo.args = {
   ...Default.args,
   replyTo: 'klausBloch',
 }
-
-export const MobileViewport = Template.bind({})
-MobileViewport.args = {
-  ...Default.args,
-}
-MobileViewport.parameters = {
-  viewport: {
-    defaultViewport: 'mobile1',
-  },
-}
