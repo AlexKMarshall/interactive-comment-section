@@ -36,3 +36,6 @@ use the addon `storybook-addon-pseudo-states` to make stories that display hover
 install prisma, set up schema
 install nexus and apollo server micro etc. There are currently some type issues as nexus doesn't support graphql 16 so pin it at ^15.8.0
 Installing genql to do the querying on the frontend. the genql cli has a dependency on graphql@\* so this always instlals latest version. That then conflicts with 15.8.0, so we have to use a yarn resolution to downgrade the one genql uses
+
+to connect to postgres we can use a docker compose file. to have separate setups for dev and test we can extend/override the config and pass multiple yml files to docker compose.
+To have multiple environment variables available to prisma we can use dotenv cli to load up the environment variables. That way we can have .env.development.local with one database_url in it and .env.test.local with a different one
