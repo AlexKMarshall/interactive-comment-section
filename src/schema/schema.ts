@@ -32,7 +32,7 @@ const Query = queryType({
 })
 
 export const schema = makeSchema({
-  types: [Query, DateTime, User],
+  types: [Query, DateTime, User, Comment],
   outputs: {
     schema: join(process.cwd(), 'src/schema/generated/schema.graphql'),
     typegen: join(process.cwd(), 'src/schema/generated/nexus.d.ts'),
