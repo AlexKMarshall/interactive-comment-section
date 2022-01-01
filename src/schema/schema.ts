@@ -1,4 +1,10 @@
-import { asNexusMethod, makeSchema, objectType, queryType } from 'nexus'
+import {
+  asNexusMethod,
+  makeSchema,
+  nonNull,
+  objectType,
+  queryType,
+} from 'nexus'
 
 import { DateTimeResolver } from 'graphql-scalars'
 import { join } from 'path'
@@ -19,14 +25,18 @@ const Comment = objectType({
   definition(t) {
     t.nonNull.id('id')
     t.nonNull.string('content')
+    t.field('author', { type: nonNull('User') })
+    t.field('createdAt', { type: 'DateTime' })
   },
 })
 
 const Query = queryType({
   definition(t) {
-    t.field('hello', {
-      type: 'String',
-      resolve: () => 'hello world',
+    t.list.field('getComments', {
+      type: 'Comment',
+      resolve: (_parent, _args, ctx) => {
+        return ctx.db.comment.findMany({ include: { author: true } })
+      },
     })
   },
 })

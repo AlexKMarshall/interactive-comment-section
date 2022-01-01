@@ -45,7 +45,9 @@ export interface NexusGenScalars {
 
 export interface NexusGenObjects {
   Comment: { // root type
+    author: NexusGenRootTypes['User']; // User!
     content: string; // String!
+    createdAt?: NexusGenScalars['DateTime'] | null; // DateTime
     id: string; // ID!
   }
   Query: {};
@@ -68,11 +70,13 @@ export type NexusGenAllTypes = NexusGenRootTypes & NexusGenScalars
 
 export interface NexusGenFieldTypes {
   Comment: { // field return type
+    author: NexusGenRootTypes['User']; // User!
     content: string; // String!
+    createdAt: NexusGenScalars['DateTime'] | null; // DateTime
     id: string; // ID!
   }
   Query: { // field return type
-    hello: string | null; // String
+    getComments: Array<NexusGenRootTypes['Comment'] | null> | null; // [Comment]
   }
   User: { // field return type
     avatarSrc: string | null; // String
@@ -83,11 +87,13 @@ export interface NexusGenFieldTypes {
 
 export interface NexusGenFieldTypeNames {
   Comment: { // field return type name
+    author: 'User'
     content: 'String'
+    createdAt: 'DateTime'
     id: 'ID'
   }
   Query: { // field return type name
-    hello: 'String'
+    getComments: 'Comment'
   }
   User: { // field return type name
     avatarSrc: 'String'

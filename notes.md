@@ -30,3 +30,9 @@ Can also add the `@storybook/addon-a11y` plugin. This gives a little tab in the 
 shows any accessibility violations like low contrast etc. It's easy to then tab through them. Not sure if any violations get picked up in chromatic or not
 
 use the addon `storybook-addon-pseudo-states` to make stories that display hover/focus etc. Can use this to generate the snapshots in chromatic
+
+## backend
+
+install prisma, set up schema
+install nexus and apollo server micro etc. There are currently some type issues as nexus doesn't support graphql 16 so pin it at ^15.8.0
+Installing genql to do the querying on the frontend. the genql cli has a dependency on graphql@\* so this always instlals latest version. That then conflicts with 15.8.0, so we have to use a yarn resolution to downgrade the one genql uses
