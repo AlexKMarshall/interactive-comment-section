@@ -11,6 +11,8 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "chromatic": "npx chromatic",
+    "db:push": "prisma db push",
+    "generate": "concurrently \"yarn generate:nexus\" \"yarn generate:genql\"",
     "generate:nexus": "nodemon --exec 'ts-node --transpile-only -P nexus.tsconfig.json src/pages/api/graphql' --ext 'ts' --watch 'src/schema/**/*.ts, **/graphql/*.ts'",
     "generate:genql": "nodemon --exec 'genql --schema src/schema/generated/schema.graphql --output src/schema/generated/genql'  --watch 'src/schema/generated/schema.graphql'"
   },
@@ -56,6 +58,7 @@
     "@types/react": "17.0.38",
     "babel-loader": "^8.2.3",
     "chromatic": "^6.3.3",
+    "concurrently": "^7.0.0",
     "css-loader": "^6.5.1",
     "eslint": "8.5.0",
     "eslint-config-next": "12.0.7",

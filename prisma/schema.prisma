@@ -10,7 +10,17 @@ datasource db {
   url      = "file:./dev.db"
 }
 
+model User {
+  id        String    @id @default(cuid())
+  username  String    @unique
+  avatarSrc String?
+  Comment   Comment[]
+}
+
 model Comment {
-  id      String @id @default(cuid())
-  content String
+  id        String   @id @default(cuid())
+  author    User     @relation(fields: [authorId], references: [id])
+  authorId  String
+  content   String
+  createdAt DateTime @default(now())
 }
