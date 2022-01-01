@@ -25,6 +25,11 @@ jobs:
   # Run interaction and accessibility tests with Axe
   interaction-and-accessibility:
     runs-on: ubuntu-latest
+    env:
+      POSTGRES_USER: test
+      POSTGRES_DB: test
+      POSTGRES_PASSWORD: test
+      DATABASE_URL: postgresql://prisma:prisma@localhost:5433/test
     needs: install-cache
     steps:
       - uses: actions/checkout@v2
@@ -38,6 +43,10 @@ jobs:
           key: ${{ runner.os }}-yarn-v1-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-yarn-v1
+      - name: Docker Up
+        run: yarn docker:up:test
+      - name: Migrate DB
+        run: yarn prisma migrate deploy
       - name: Run test
         run: yarn test:cov
       - name: Publish coverage
