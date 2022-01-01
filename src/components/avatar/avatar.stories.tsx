@@ -1,6 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 
-import { Avatar } from '.'
+import { Avatar } from 'src/components'
+import { ComponentProps } from 'react'
 
 const meta: ComponentMeta<typeof Avatar> = {
   title: 'Components/Avatar',
@@ -12,17 +13,20 @@ const meta: ComponentMeta<typeof Avatar> = {
       labels: ['Valid Image', 'Broken Link'],
     },
   },
+  includeStories: /^[A-Z]/,
 }
 
 export default meta
 
 const Template: ComponentStory<typeof Avatar> = (args) => <Avatar {...args} />
 
-export const Default = Template.bind({})
-Default.args = {
+export const defaultArgs: ComponentProps<typeof Avatar> = {
   username: 'belinda',
   src: '/avatar.jpg',
 }
+
+export const Default = Template.bind({})
+Default.args = defaultArgs
 
 export const NoImage = Template.bind({})
 NoImage.args = {

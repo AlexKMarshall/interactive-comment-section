@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
-import { Icon, iconKeys } from '.'
+import { Icon, iconKeys } from 'src/components'
 
 const meta: ComponentMeta<typeof Icon> = {
   title: 'Components/Icon',

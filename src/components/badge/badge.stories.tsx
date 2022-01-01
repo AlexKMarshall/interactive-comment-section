@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 
-import { Badge } from '.'
+import { Badge } from 'src/components'
 import { fontSizeTokens } from 'src/styles/font.css'
 
 const meta: ComponentMeta<typeof Badge> = {

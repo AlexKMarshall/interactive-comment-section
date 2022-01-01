@@ -1,3 +1,4 @@
+import { colorThemeTokens } from './color.css'
 import { globalStyle } from '@vanilla-extract/css'
 import { lineHeightTokens } from './font.css'
 
@@ -29,6 +30,7 @@ globalStyle('body', {
   textRendering: 'optimizeSpeed',
   lineHeight: lineHeightTokens[3],
   fontFamily: `'Rubik', sans-serif`,
+  color: colorThemeTokens.text.body,
 })
 
 globalStyle('a:not([class])', {
