@@ -1,6 +1,7 @@
 import {FieldsSelection,Observable} from '@genql/runtime'
 
 export type Scalars = {
+    DateTime: any,
     String: string,
     Boolean: boolean,
 }

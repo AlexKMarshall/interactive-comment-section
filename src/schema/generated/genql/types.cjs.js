@@ -1,15 +1,17 @@
 module.exports = {
     "scalars": [
-        1,
-        2
+        0,
+        2,
+        3
     ],
     "types": {
+        "DateTime": {},
         "Query": {
             "hello": [
-                1
+                2
             ],
             "__typename": [
-                1
+                2
             ]
         },
         "String": {},
