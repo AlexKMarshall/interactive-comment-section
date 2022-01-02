@@ -1,5 +1,6 @@
 import { ApolloServer } from 'apollo-server-micro'
 import Cors from 'micro-cors'
+import { PageConfig } from 'next'
 import { context } from 'src/schema/context'
 import { schema } from 'src/schema/schema'
 
@@ -25,7 +26,7 @@ export default cors(async function handler(req, res) {
   })(req, res)
 })
 
-export const config = {
+export const config: PageConfig = {
   api: {
     bodyParser: false,
   },

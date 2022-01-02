@@ -11,11 +11,11 @@ function buildUser() {
 type User = ReturnType<typeof buildUser>
 
 type BuildCommentProps = {
-  user?: User
+  author?: User
 }
-function buildComment({ user = buildUser() }: BuildCommentProps = {}) {
+function buildComment({ author = buildUser() }: BuildCommentProps = {}) {
   return {
-    user,
+    author,
     content: faker.lorem.paragraph(),
   }
 }
@@ -60,7 +60,7 @@ describe('Comment', () => {
   })
 
   test('create comment', async () => {
-    const comment = buildComment({ user })
+    const comment = buildComment({ author: user })
 
     const createdComment = await prisma.comment.create({
       data: {
@@ -78,8 +78,8 @@ describe('Comment', () => {
       createdAt: expect.any(Date),
       author: {
         id: expect.any(String),
-        username: comment.user.username,
-        avatarSrc: comment.user.avatarSrc,
+        username: comment.author.username,
+        avatarSrc: comment.author.avatarSrc,
       },
     })
   })

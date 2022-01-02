@@ -17,8 +17,8 @@
     "db:seed": "prisma db seed",
     "db:migrate:test": "dotenv -e .env.test.local -- prisma migrate deploy",
     "generate": "concurrently \"yarn generate:nexus\" \"yarn generate:genql\"",
-    "generate:nexus": "nodemon --exec 'ts-node --transpile-only -P nexus.tsconfig.json src/pages/api/graphql' --ext 'ts' --watch '**/schema/**/*.ts' --watch '**/graphql/*.ts'",
-    "generate:genql": "nodemon --exec 'genql --schema src/schema/generated/schema.graphql --output src/schema/generated/genql'  --watch 'src/schema/generated/schema.graphql'"
+    "generate:nexus": "dotenv -e .env.development.local -- nodemon --exec 'ts-node --transpile-only -P nexus.tsconfig.json src/pages/api/graphql' --ext 'ts' --watch '**/schema/**/*.ts' --watch '**/graphql/*.ts'",
+    "generate:genql": "dotenv -e .env.development.local -- nodemon --exec 'genql --schema src/schema/generated/schema.graphql --output src/schema/generated/genql'  --watch 'src/schema/generated/schema.graphql'"
   },
   "dependencies": {
     "@genql/runtime": "^2.9.0",
@@ -72,7 +72,9 @@
     "faker": "^5.5.0",
     "jest": "^27.4.5",
     "jest-axe": "^5.0.1",
+    "jest-extended": "^1.2.0",
     "mini-css-extract-plugin": "^2.4.5",
+    "next-test-api-route-handler": "^3.0.2",
     "nodemon": "^2.0.15",
     "prisma": "^3.7.0",
     "storybook-addon-pseudo-states": "^1.0.0",
