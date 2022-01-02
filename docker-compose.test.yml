@@ -11,6 +11,7 @@ services:
       POSTGRES_USER: prisma
       POSTGRES_PASSWORD: prisma
       POSTGRES_DB: test
+    command: tail -F anything
 
 volumes:
   database-data:
