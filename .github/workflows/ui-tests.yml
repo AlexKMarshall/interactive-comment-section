@@ -45,6 +45,8 @@ jobs:
             ${{ runner.os }}-yarn-v1
       - name: Docker Up
         run: yarn docker:up:test
+      - name: Check Docker
+        run: docker ps -a
       - name: Migrate DB
         run: yarn prisma migrate deploy
       - name: Run test
