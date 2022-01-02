@@ -39,3 +39,13 @@ Installing genql to do the querying on the frontend. the genql cli has a depende
 
 to connect to postgres we can use a docker compose file. to have separate setups for dev and test we can extend/override the config and pass multiple yml files to docker compose.
 To have multiple environment variables available to prisma we can use dotenv cli to load up the environment variables. That way we can have .env.development.local with one database_url in it and .env.test.local with a different one
+
+docker seems to be a bit picky on github actions, terminating the process before the tests can run. Strangely, adding a `docker ps` step to log the containers after spinning up seems to have resolved it
+
+test the database schema to make sure things like uniqueness are set up properly - neede to tear down the database between each test. Potentially we need to set up different database environments per worker id, so they don't clash with each other
+
+can test the graphql endpoint by spinning up the server, and using genql to make a query. then assert on the result of the query. Can use next-test-api-route-handler to set up a test instance of the server.
+this runs up the server on a random port. So we can't use the default genql client. But the test handler provides a fetch function in its test call back that is bound to the correct port.
+And genql provides a fetcher option in its createClient function that allows you to call an injected fetch function. So we can inject the fetch from the test handler and everything works.
+
+Exclude the nexus generated files from test coverage.
