@@ -1,5 +1,6 @@
 import { createVar, style } from '@vanilla-extract/css'
 
+import { colorThemeTokens } from 'src/styles/color.css'
 import { fontSizeTokens } from 'src/styles/font.css'
 import { radiusTokens } from 'src/styles/radius.css'
 import { recipe } from '@vanilla-extract/recipes'
@@ -15,7 +16,8 @@ const avatarBase = style({
   borderRadius: radiusTokens.round,
   overflow: 'hidden',
   backgroundColor,
-  fontSize: fontSizeTokens[4],
+  color: colorThemeTokens.text.strong,
+  fontSize: fontSizeTokens[3],
 })
 
 export const avatar = recipe({
