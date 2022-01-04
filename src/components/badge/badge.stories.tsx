@@ -1,6 +1,5 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react'
-
 import { Badge } from 'src/components'
+import { ComponentMeta } from '@storybook/react'
 import { fontSizeTokens } from 'src/styles/font.css'
 
 const meta: ComponentMeta<typeof Badge> = {
@@ -15,9 +14,4 @@ const meta: ComponentMeta<typeof Badge> = {
 
 export default meta
 
-const Template: ComponentStory<typeof Badge> = (args) => <Badge {...args} />
-
-export const Default = Template.bind({})
-Default.args = {
-  children: 'you',
-}
+export const Default = { args: { children: 'you' } }
