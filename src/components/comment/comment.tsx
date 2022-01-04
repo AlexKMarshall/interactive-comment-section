@@ -5,25 +5,25 @@ import { Box, Button, Cluster, Username, VoteCounter } from 'src/components'
 import { formatDistance } from 'date-fns'
 
 type Props = {
-  user: {
+  author: {
     username: string
     avatarSrc?: string
   }
   isCurrentUser: boolean
   content: string
-  createdOn: Date
+  createdAt: Date
   replyTo?: string
   votes: number
 }
 export function Comment({
-  user,
+  author,
   isCurrentUser,
-  createdOn,
+  createdAt,
   content,
   replyTo,
   votes,
 }: Props): JSX.Element {
-  const commentTimePeriod = formatDistance(createdOn, Date.now())
+  const commentTimePeriod = formatDistance(createdAt, Date.now())
 
   return (
     <Box
@@ -35,8 +35,8 @@ export function Comment({
       <div className={styles.meta}>
         <Cluster>
           <Username
-            username={user.username}
-            avatarSrc={user.avatarSrc}
+            username={author.username}
+            avatarSrc={author.avatarSrc}
             isCurrentUser={isCurrentUser}
           />
           <span>{commentTimePeriod} ago</span>

@@ -14,7 +14,7 @@
     "chromatic": "npx chromatic",
     "db:push": "dotenv -e .env.development.local -- prisma db push",
     "db:studio": "dotenv -e .env.development.local -- prisma studio",
-    "db:seed": "prisma db seed",
+    "db:seed": "dotenv -e .env.development.local prisma db seed",
     "db:migrate:test": "dotenv -e .env.test.local -- prisma migrate deploy",
     "generate": "concurrently \"yarn generate:nexus\" \"yarn generate:genql\"",
     "generate:nexus": "dotenv -e .env.development.local -- nodemon --exec 'ts-node --transpile-only -P nexus.tsconfig.json src/pages/api/graphql' --ext 'ts' --watch '**/schema/**/*.ts' --watch '**/graphql/*.ts'",
@@ -40,7 +40,8 @@
     "next": "12.0.7",
     "nexus": "^1.1.0",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "react-query": "^3.34.7"
   },
   "devDependencies": {
     "@babel/core": "^7.16.5",

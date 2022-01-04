@@ -2,13 +2,13 @@ import { Comment, Stack } from 'src/components'
 
 type Comment = {
   id: string
-  user: {
+  author: {
     username: string
     avatarSrc?: string
   }
   isCurrentUser: boolean
   content: string
-  createdOn: Date
+  createdAt: Date
   replyTo?: string
   votes: number
 }

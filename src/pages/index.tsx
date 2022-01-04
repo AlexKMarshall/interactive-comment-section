@@ -1,3 +1,4 @@
+import { CommentListScreen } from 'src/screens'
 import Head from 'next/head'
 import type { NextPage } from 'next'
 
@@ -15,6 +16,7 @@ const Home: NextPage = () => {
 
       <main>
         <h1>Interactive Comment Section</h1>
+        <CommentListScreen />
       </main>
     </>
   )
