@@ -1,0 +1,11 @@
+version: '3.9'
+
+services:
+  db:
+    container_name: interactive-comments-dev
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_USER: prisma
+      POSTGRES_PASSWORD: prisma
+      POSTGRES_DB: dev

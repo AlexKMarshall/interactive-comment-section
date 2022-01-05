@@ -6,6 +6,7 @@ module.exports = {
     '!**/*.test*',
     '!**/*.d.ts',
     '!**/node_modules/**',
+    '!**/generated/**',
   ],
   moduleNameMapper: {
     '^src/(.*)$': '<rootDir>/src/$1',

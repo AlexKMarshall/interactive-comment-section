@@ -1,8 +1,11 @@
 import '@testing-library/jest-dom/extend-expect'
 import '@vanilla-extract/css/disableRuntimeStyles'
 
+import * as matchers from 'jest-extended'
+
 import { toHaveNoViolations } from 'jest-axe'
 
+expect.extend(matchers)
 expect.extend(toHaveNoViolations)
 
 beforeEach(() => {
