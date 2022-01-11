@@ -18,23 +18,23 @@ const meta: ComponentMeta<typeof Avatar> = {
 
 export default meta
 
-const Template: ComponentStory<typeof Avatar> = (args) => <Avatar {...args} />
-
-export const defaultArgs: ComponentProps<typeof Avatar> = {
-  username: 'belinda',
-  src: '/avatar.jpg',
+export const Default = {
+  args: {
+    username: 'belinda',
+    src: '/avatar.jpg',
+  },
 }
 
-export const Default = Template.bind({})
-Default.args = defaultArgs
-
-export const NoImage = Template.bind({})
-NoImage.args = {
-  username: 'klausbloch',
+export const NoImage = {
+  args: {
+    username: 'klausbloch',
+  },
 }
 
-export const BrokenImage = Template.bind({})
-BrokenImage.args = {
-  ...Default.args,
-  src: '/missing-image-file.jpg',
+export const BrokenImage = {
+  ...Default,
+  args: {
+    ...Default.args,
+    src: '/missing-image-file.jpg',
+  },
 }

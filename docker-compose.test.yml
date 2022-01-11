@@ -2,7 +2,7 @@ version: '3.9'
 
 services:
   db:
-    container_name: interactive-comments-test
+    # container_name: interactive-comments-test
     ports:
       - 5433:5432
     volumes:
@@ -11,7 +11,7 @@ services:
       POSTGRES_USER: prisma
       POSTGRES_PASSWORD: prisma
       POSTGRES_DB: test
-    command: tail -F anything
+    # command: tail -F anything
 
 volumes:
   database-data:
