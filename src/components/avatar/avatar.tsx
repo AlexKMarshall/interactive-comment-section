@@ -1,3 +1,4 @@
+import 'src/styles/reset.css'
 import * as styles from './avatar.css'
 
 import NextImage from 'next/image'

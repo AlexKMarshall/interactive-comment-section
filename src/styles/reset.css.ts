@@ -13,7 +13,11 @@ globalStyle('body, h1, h2, h3, h4, p, figure, blockquote, dl, dd', {
   margin: 0,
 })
 
-globalStyle(`ul[role='list'], ol[role='list']`, { listStyle: 'none' })
+globalStyle(`ul[role='list'], ol[role='list']`, {
+  listStyle: 'none',
+  margin: 0,
+  padding: 0,
+})
 
 globalStyle('html', {
   minHeight: '100%',
