@@ -1,1 +1,1 @@
-export * from './comment-list.screen'
+export * from './comment-screen'
