@@ -9,6 +9,7 @@ function useComments() {
   const fetcher = () =>
     client
       .query({
+        __name: 'getComments',
         getComments: {
           id: true,
           content: true,

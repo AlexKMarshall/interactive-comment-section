@@ -23,7 +23,7 @@ const meta: ComponentMeta<typeof CommentList> = {
 }
 export default meta
 
-export const defaultArgs: ComponentProps<typeof CommentList> = {
+const defaultArgs: ComponentProps<typeof CommentList> = {
   comments: [
     {
       id: '1',

@@ -31,6 +31,15 @@ shows any accessibility violations like low contrast etc. It's easy to then tab 
 
 use the addon `storybook-addon-pseudo-states` to make stories that display hover/focus etc. Can use this to generate the snapshots in chromatic
 
+storybook has setup like global styles, and providers etc in its preview file. We can include this in the tests by including the following in jest setup
+
+```javascript
+import * as globalStorybookConfig from './.storybook/preview'
+import { setGlobalConfig } from '@storybook/testing-react'
+
+setGlobalConfig(globalStorybookConfig)
+```
+
 ## backend
 
 install prisma, set up schema
