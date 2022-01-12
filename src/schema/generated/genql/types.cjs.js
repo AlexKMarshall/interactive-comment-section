@@ -3,21 +3,24 @@ module.exports = {
         1,
         2,
         3,
-        6
+        4
     ],
     "types": {
         "Comment": {
             "author": [
-                5
+                6
             ],
             "content": [
                 1
             ],
             "createdAt": [
-                3
+                4
             ],
             "id": [
                 2
+            ],
+            "isCurrentUser": [
+                3
             ],
             "__typename": [
                 1
@@ -25,6 +28,7 @@ module.exports = {
         },
         "String": {},
         "ID": {},
+        "Boolean": {},
         "DateTime": {},
         "Query": {
             "getComments": [
@@ -47,7 +51,6 @@ module.exports = {
             "__typename": [
                 1
             ]
-        },
-        "Boolean": {}
+        }
     }
 }

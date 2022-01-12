@@ -54,6 +54,18 @@ async function main() {
       createdAt: new Date(Date.now() - 1000 * 60 * 60 * 24 * 15),
     },
   })
+
+  await prisma.comment.create({
+    data: {
+      content: `I couldn't agree more with this. Everything moves so fast and it always seems like everyone knows the newest library/framework. But the fundamentals are what stay constant.`,
+      author: {
+        connect: {
+          id: juliusomo.id,
+        },
+      },
+      createdAt: new Date(Date.now() - 1000 * 60 * 60 * 24 * 2),
+    },
+  })
 }
 
 main()

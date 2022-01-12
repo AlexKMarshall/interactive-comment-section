@@ -3,6 +3,7 @@ type Comment {
   content: String!
   createdAt: DateTime
   id: ID!
+  isCurrentUser: Boolean!
 }
 
 """

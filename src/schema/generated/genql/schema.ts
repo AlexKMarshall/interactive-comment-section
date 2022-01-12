@@ -3,8 +3,8 @@ import {FieldsSelection,Observable} from '@genql/runtime'
 export type Scalars = {
     String: string,
     ID: string,
-    DateTime: any,
     Boolean: boolean,
+    DateTime: any,
 }
 
 export interface Comment {
@@ -12,6 +12,7 @@ export interface Comment {
     content: Scalars['String']
     createdAt?: Scalars['DateTime']
     id: Scalars['ID']
+    isCurrentUser: Scalars['Boolean']
     __typename: 'Comment'
 }
 
@@ -32,6 +33,7 @@ export interface CommentRequest{
     content?: boolean | number
     createdAt?: boolean | number
     id?: boolean | number
+    isCurrentUser?: boolean | number
     __typename?: boolean | number
     __scalar?: boolean | number
 }
@@ -78,14 +80,16 @@ export interface CommentPromiseChain{
     author: (UserPromiseChain & {get: <R extends UserRequest>(request: R, defaultValue?: FieldsSelection<User, R>) => Promise<FieldsSelection<User, R>>}),
     content: ({get: (request?: boolean|number, defaultValue?: Scalars['String']) => Promise<Scalars['String']>}),
     createdAt: ({get: (request?: boolean|number, defaultValue?: (Scalars['DateTime'] | undefined)) => Promise<(Scalars['DateTime'] | undefined)>}),
-    id: ({get: (request?: boolean|number, defaultValue?: Scalars['ID']) => Promise<Scalars['ID']>})
+    id: ({get: (request?: boolean|number, defaultValue?: Scalars['ID']) => Promise<Scalars['ID']>}),
+    isCurrentUser: ({get: (request?: boolean|number, defaultValue?: Scalars['Boolean']) => Promise<Scalars['Boolean']>})
 }
 
 export interface CommentObservableChain{
     author: (UserObservableChain & {get: <R extends UserRequest>(request: R, defaultValue?: FieldsSelection<User, R>) => Observable<FieldsSelection<User, R>>}),
     content: ({get: (request?: boolean|number, defaultValue?: Scalars['String']) => Observable<Scalars['String']>}),
     createdAt: ({get: (request?: boolean|number, defaultValue?: (Scalars['DateTime'] | undefined)) => Observable<(Scalars['DateTime'] | undefined)>}),
-    id: ({get: (request?: boolean|number, defaultValue?: Scalars['ID']) => Observable<Scalars['ID']>})
+    id: ({get: (request?: boolean|number, defaultValue?: Scalars['ID']) => Observable<Scalars['ID']>}),
+    isCurrentUser: ({get: (request?: boolean|number, defaultValue?: Scalars['Boolean']) => Observable<Scalars['Boolean']>})
 }
 
 export interface QueryPromiseChain{

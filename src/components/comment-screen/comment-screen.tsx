@@ -18,13 +18,13 @@ function useComments() {
             avatarSrc: true,
           },
           createdAt: true,
+          isCurrentUser: true,
         },
       })
       .then((data) =>
         data.getComments?.map((comment) => ({
           ...comment,
           createdAt: parseJSON(comment.createdAt),
-          isCurrentUser: false,
           votes: 0,
         }))
       )
