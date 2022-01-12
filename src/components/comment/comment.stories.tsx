@@ -25,11 +25,11 @@ export default meta
 
 export const Default = {
   args: {
-    user: usernameStories.Default.args,
+    author: usernameStories.Default.args,
     isCurrentUser: false,
     content:
       'Ice cream sugar plum sweet sweet lollipop. Topping tart brownie muffin halvah cheesecake ice cream cake gummi bears. Tart chocolate bar gummi bears cake halvah dragée cake gummi bears jelly beans. Powder fruitcake toffee caramels marzipan marzipan.',
-    createdOn: new Date(Date.now() - 1000 * 60 * 60 * 48),
+    createdAt: new Date(Date.now() - 1000 * 60 * 60 * 48),
     votes: 0,
   },
 }

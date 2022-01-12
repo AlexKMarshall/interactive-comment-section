@@ -74,6 +74,7 @@ export interface NexusGenFieldTypes {
     content: string; // String!
     createdAt: NexusGenScalars['DateTime'] | null; // DateTime
     id: string; // ID!
+    isCurrentUser: boolean; // Boolean!
   }
   Query: { // field return type
     getComments: Array<NexusGenRootTypes['Comment'] | null> | null; // [Comment]
@@ -91,6 +92,7 @@ export interface NexusGenFieldTypeNames {
     content: 'String'
     createdAt: 'DateTime'
     id: 'ID'
+    isCurrentUser: 'Boolean'
   }
   Query: { // field return type name
     getComments: 'Comment'

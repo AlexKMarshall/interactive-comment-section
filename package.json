@@ -13,8 +13,9 @@
     "build-storybook": "build-storybook",
     "chromatic": "npx chromatic",
     "db:push": "dotenv -e .env.development.local -- prisma db push",
+    "db:reset": "dotenv -e .env.development.local -- prisma migrate reset",
     "db:studio": "dotenv -e .env.development.local -- prisma studio",
-    "db:seed": "prisma db seed",
+    "db:seed": "dotenv -e .env.development.local prisma db seed",
     "db:migrate:test": "dotenv -e .env.test.local -- prisma migrate deploy",
     "generate": "concurrently \"yarn generate:nexus\" \"yarn generate:genql\"",
     "generate:nexus": "dotenv -e .env.development.local -- nodemon --exec 'ts-node --transpile-only -P nexus.tsconfig.json src/pages/api/graphql' --ext 'ts' --watch '**/schema/**/*.ts' --watch '**/graphql/*.ts'",
@@ -40,7 +41,8 @@
     "next": "12.0.7",
     "nexus": "^1.1.0",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "react-query": "^3.34.7"
   },
   "devDependencies": {
     "@babel/core": "^7.16.5",
@@ -74,6 +76,8 @@
     "jest-axe": "^5.0.1",
     "jest-extended": "^1.2.0",
     "mini-css-extract-plugin": "^2.4.5",
+    "msw": "^0.36.4",
+    "msw-storybook-addon": "^1.5.0",
     "next-test-api-route-handler": "^3.0.2",
     "nodemon": "^2.0.15",
     "prisma": "^3.7.0",
@@ -89,5 +93,8 @@
   },
   "resolutions": {
     "@genql/cli/graphql": "^15.8.0"
+  },
+  "msw": {
+    "workerDirectory": "public"
   }
 }

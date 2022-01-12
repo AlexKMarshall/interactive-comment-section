@@ -16,7 +16,7 @@ export function Stack({
   component: Component = 'div',
   children,
   space = 4,
-  align = 'center',
+  align,
   role,
 }: Props): JSX.Element {
   const sprinklesClassNames = sprinkles({

@@ -27,6 +27,11 @@ const Comment = objectType({
     t.nonNull.string('content')
     t.field('author', { type: nonNull('User') })
     t.field('createdAt', { type: 'DateTime' })
+    t.field('isCurrentUser', {
+      type: nonNull('Boolean'),
+      resolve: (source, _args, context) =>
+        source.author.username === context.currentUser,
+    })
   },
 })
 
